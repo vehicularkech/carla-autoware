@@ -2,9 +2,9 @@
 
   <!-- setting of this launch file -->
   <arg name="car_detection" default="true" />
-  <arg name="pedestrian_detection" default="false" />
+  <arg name="pedestrian_detection" default="true" />
   <arg name="is_use_gpu" default="true" />
-  <arg name="is_register_lidar2camera_tf" default="true" />
+  <arg name="is_register_lidar2camera_tf" default="false" />
   <arg name="is_publish_projection_matrix" default="true" />
   <arg name="is_publish_camera_info" default="true" />
 
@@ -56,5 +56,15 @@
   <!--
   <include file="$(find trafficlight_recognizer)/launch/traffic_light_recognition.launch" />
   -->
+
+  <!-- yolo3 -->
+  <include file="$(find vision_darknet_detect)/launch/vision_yolo3_detect.launch" />
+
+  <!-- range_vision_fusion -->
+  <!--<include file="$(find range_vision_fusion)/launch/range_vision_fusion.launch" />-->
+
+  <!-- imm ukf track -->
+  <!--<include file="$(find imm_ukf_pda_track)/launch/imm_ukf_pda_track.launch" />-->
+
 
 </launch>
